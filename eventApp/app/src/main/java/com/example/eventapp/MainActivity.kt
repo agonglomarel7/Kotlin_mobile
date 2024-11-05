@@ -1,6 +1,5 @@
 package com.example.eventapp
 
-import MainActivity2
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -27,19 +26,22 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val button = findViewById<Button>(R.id.button)
 
-        // Ajoute un listener onClick
-        button.setOnClickListener {
-            // Crée un Intent explicite pour démarrer SecondActivity
-            val intent = Intent(this, MainActivity2::class.java)
-            intent.putExtra("EXTRA_DUREE", "Jean Dupont")
-            intent.putExtra("EXTRA_DATE", "2023-11-10")
-            startActivity(intent)
-        }
 
         initCalendarEvent()
         initSeekBArEvent()
+
+        val button = findViewById<Button>(R.id.button)
+
+
+        button.setOnClickListener(){
+            val intent = Intent(this, MainActivity3::class.java)
+
+            intent.putExtra("EXTRA_DUREE", stayDuration) // Envoyer stayDuration comme un Int
+            intent.putExtra("EXTRA_DATE", bookingDate)
+            startActivity(intent)
+
+        }
     }
 
     private fun initCalendarEvent() {
