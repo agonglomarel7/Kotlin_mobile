@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Infos App"
+        app:titleMarginStart="50dp" />
+
     <EditText
         android:id="@+id/editTextText"
         android:layout_width="wrap_content"
@@ -16,9 +27,9 @@
         android:hint="Enter your email"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
         android:id="@+id/editTextText2"
@@ -41,13 +52,15 @@
         android:onClick="tryToConnect"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1"
-        tools:layout_editor_absoluteX="161dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
 
     <Switch
         android:id="@+id/switch1"
-        android:layout_width="289dp"
-        android:layout_height="31dp"
+        android:layout_width="296dp"
+        android:layout_height="45dp"
         android:layout_marginTop="50dp"
         android:text="J'accepte les conditions générales"
         app:layout_constraintEnd_toEndOf="parent"
